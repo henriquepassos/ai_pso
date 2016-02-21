@@ -8,7 +8,7 @@ public class PSODriver {
 
         Param param = driver.getParam();
 
-        Problem problem = driver.getProblemSvm();
+        Problem problem = driver.getProblemSet();
 
         new PSOProcess(param, problem).execute();
     }
@@ -33,38 +33,6 @@ public class PSODriver {
 
         problem.setLocLow(new double[]{1, -1});
         problem.setLocHigh(new double[]{4, 1});
-
-        problem.setVelLow(new double[]{-1, -1});
-        problem.setVelHigh(new double[]{1, 1});
-
-        problem.setError(1E-20);
-        problem.setSize(2);
-
-        return problem;
-    }
-
-    public Problem getProblemEcg() {
-
-        Problem problem = new ProblemEcg();
-
-        problem.setLocLow(new double[]{80, 2, 2, 20});
-        problem.setLocHigh(new double[]{100, 6, 6, 60});
-
-        problem.setVelLow(new double[]{-1, -1, -1, -1});
-        problem.setVelHigh(new double[]{1, 1, 1, 1});
-
-        problem.setError(1E-20);
-        problem.setSize(4);
-
-        return problem;
-    }
-
-    public Problem getProblemSvm() {
-
-        Problem problem = new ProblemEcg();
-
-        problem.setLocLow(new double[]{0.03125, 3.0517578125e-05});
-        problem.setLocHigh(new double[]{32768, 8});
 
         problem.setVelLow(new double[]{-1, -1});
         problem.setVelHigh(new double[]{1, 1});

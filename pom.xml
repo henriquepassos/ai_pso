@@ -4,14 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>br.com.henriquespassos</groupId>
-        <artifactId>project</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <groupId>br.com.henriquespassos</groupId>
     <artifactId>ai_pso</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <code.encode>UTF-8</code.encode>
+        <code.version>1.6</code.version>
+        <project.build.sourceEncoding>${code.encode}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${code.encode}</project.reporting.outputEncoding>
+        <maven.compiler.source>${code.version}</maven.compiler.source>
+        <maven.compiler.target>${code.version}</maven.compiler.target>
+    </properties>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -37,13 +44,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>br.com.henriquespassos</groupId>
-            <artifactId>ai_ecg</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
 </project>
